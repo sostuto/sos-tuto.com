@@ -135,3 +135,31 @@ jQuery(document).ready(function($) {
     });
 
 });
+// Fonction pour ajuster la taille du logo
+function adjustLogoSize() {
+    const logo = document.getElementById('logo'); // Sélectionne l'élément du logo
+    const screenWidth = window.innerWidth; // Récupère la largeur de l'écran
+
+    // Logique pour ajuster la taille du logo en fonction de la largeur de l'écran
+    if (screenWidth <= 600) {  // Taille pour les téléphones
+        logo.style.width = '200px';  // Taille du logo sur téléphone
+    } else if (screenWidth <= 1024) {  // Taille pour les tablettes
+        logo.style.width = '200px';  // Taille du logo sur tablette
+    } else {  // Taille pour les ordinateurs
+        logo.style.width = '300px';  // Taille du logo sur ordinateur
+    }
+}
+
+// Appel de la fonction lors du redimensionnement de la fenêtre
+window.addEventListener('resize', adjustLogoSize);
+
+// Appel initial de la fonction pour ajuster la taille du logo lors du chargement de la page
+adjustLogoSize();
+function moveLogoUp() {
+    const logo = document.getElementById('logo'); // Sélectionne l'élément du logo
+    logo.style.position = 'relative';  // Définit la position comme relative
+    logo.style.top = '-20px';  // Déplace le logo vers le haut de 20px
+}
+
+// Appel de la fonction pour déplacer le logo vers le haut au chargement de la page
+moveLogoUp();
